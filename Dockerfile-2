@@ -3,6 +3,6 @@ WORKDIR /app
 COPY . .
 RUN sonar-scanner \
     -Dsonar.host.url="http://localhost:9000" \
-    -Dsonar.projectKey="Prestashop" \
+    -Dsonar.projectKey="Factor" \
     -Dsonar.sources="base"
 

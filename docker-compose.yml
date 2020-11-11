@@ -23,26 +23,6 @@ services:
       - JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' 'unsafe-inline' data:;\""
     logging:
       driver: "journald"
-  zara-web:
-    image: prestashop/prestashop:latest
-    container_name: zara-web
-    networks:
-      - jenkins
-    ports:
-      - '8000:80'
-    depends_on:
-      - zara_database
-    logging:
-      driver: "journald"
-  zara_database:
-    image: mysql:5.7
-    container_name: zara-database
-    networks:
-      - jenkins
-    ports:
-      - '3307:3306'
-    logging:
-      driver: "journald"
   sonarqube:
     user: 1001:1001
     image: sonarqube
