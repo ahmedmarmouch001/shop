@@ -1,0 +1,8 @@
+FROM jhonacevedo/sonar-scanner-image AS sonarqube_scan
+WORKDIR /app
+COPY . .
+RUN sonar-scanner \
+    -Dsonar.host.url="http://localhost:9000" \
+    -Dsonar.projectKey="Prestashop" \
+    -Dsonar.sources="base"
+
