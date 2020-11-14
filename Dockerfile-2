@@ -1,4 +1,4 @@
 FROM jhonacevedo/sonar-scanner-image AS sonarqube_scan
 WORKDIR /app
 COPY . .
-RUN ls /app
+RUN ls /app/base
