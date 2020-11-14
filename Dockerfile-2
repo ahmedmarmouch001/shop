@@ -1,4 +1,7 @@
 FROM jhonacevedo/sonar-scanner-image AS sonarqube_scan
 WORKDIR /app
 COPY . .
-RUN ls /app/shop/
+RUN sonar-scanner \
+    -Dsonar.host.url="http://localhost:9000" \
+    -Dsonar.projectKey="Factor" \
+    -Dsonar.sources="/app/shop/base"
