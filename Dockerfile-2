@@ -4,5 +4,5 @@ COPY . .
 RUN sonar-scanner \
     -Dsonar.host.url="http://localhost:9000" \
     -Dsonar.projectKey="Factor" \
-    -Dsonar.sources="/app/base"
+    -Dsonar.sources="/base"
 
